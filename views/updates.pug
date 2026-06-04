@@ -1,0 +1,36 @@
+// update.pug
+doctype html
+
+html
+  head
+    // Título vem do index.js
+    title= title
+
+  body
+    h1 Criar novo registro
+
+    // Formulário envia dados via POST para /update-cobj
+    form(action="/update-cobj" method="POST")
+
+      // ***SUBSTITUIR COM AS PROPRIEDADES QUE VOCÊ CRIOU***
+      // NÃO ESQUEÇA DE MUDAR O TYPE!!
+      // Campo "name"
+      label Name:
+      input(type="text" name="nome" required)
+      br
+
+      // Campo "specie"
+      label Specie:
+      input(type="text" name="marca" required)
+      br
+
+      // Campo "age"
+      label Age:
+      input(type="text" name="ano" required)
+      br
+
+      // Botão de envio
+      button(type="submit") Criar registro
+
+    // Link para voltar à homepage
+    a(href="/") Return to the homepage

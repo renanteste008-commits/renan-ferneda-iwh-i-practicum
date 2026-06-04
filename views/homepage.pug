@@ -1,0 +1,35 @@
+// homepage.pug
+// Define o tipo do documento HTML
+doctype html
+
+html
+  head
+    // Título vem do index.js
+    title= title
+
+  body
+    // Link para o formulário de criação de novos registros
+    a(href="/update-cobj") Add to this table
+
+    h1 Lista de registros
+
+    // Tabela que exibe os registros do Custom Object (***SUBSTITUIR COM AS PROPRIEDADES QUE VOCÊ CRIOU***)
+    table(border="1")
+      thead
+        tr
+          th ID
+          th Nome
+          th Marca
+          th Ano
+
+      tbody
+        // Loop pelos registros enviados pelo index.js
+        each item in items
+          tr
+            // ID interno do registro no HubSpot
+            td= item.id
+
+            // Propriedades do Custom Object (***SUBSTITUIR COM AS PROPRIEDADES QUE VOCÊ CRIOU***)
+            td= item.properties.nome
+            td= item.properties.marca
+            td= item.properties.ano
